@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- SEO & GitHub/Social Readiness -->
+  <title>Nayeb | نايب — الفخامة في تنظيم الدعوات</title>
+  <meta name="description" content="نايب ينوب عنك في تنظيم وإرسال دعوات مناسباتك الخاصة عبر الواتساب بكل فخامة ودقة.">
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourusername.github.io/nayeb/">
+  <meta property="og:title" content="Nayeb | نايب — الفخامة في تنظيم الدعوات">
+  <meta property="og:description" content="نظام تتبع حضور ذكي يبيض وجهك. دعوات واتساب فاخرة ومخصصة.">
+  <meta property="og:image" content="https://yourusername.github.io/nayeb/social-preview.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Nayeb | نايب — الفخامة في تنظيم الدعوات">
+  <meta property="twitter:description" content="نظام تتبع حضور ذكي يبيض وجهك. دعوات واتساب فاخرة ومخصصة.">
+
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Brand Identity Colors */
+      --brand-indigo: #1A2B3C;
+      --brand-gold: #C5A059;
+      --brand-gold-light: #E5D5B5;
+      --bg-cream: #FDFBF7;
+      --text-main: #2D3436;
+      --text-muted: #636E72;
+      --white: #FFFFFF;
+      --success: #27AE60;
+      
+      /* UI Tokens */
+      --shadow-sm: 0 2px 4px rgba(26, 43, 60, 0.04);
+      --shadow-md: 0 12px 24px rgba(26, 43, 60, 0.08);
+      --radius-lg: 20px;
+      --radius-sm: 8px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * { box-sizing: border-box; outline: none; }
+    
+    body { 
+      margin: 0; 
+      font-family: 'IBM Plex Sans Arabic', 'Inter', sans-serif; 
+      background-color: var(--bg-cream); 
+      color: var(--text-main); 
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    [dir="ltr"] body { font-family: 'Inter', sans-serif; }
+
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+
+    header { 
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      background: rgba(253, 251, 247, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 100;
+      border-bottom: 1px solid rgba(197, 160, 89, 0.1);
+    }
+
+    .logo-wrap { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo-icon { 
+      width: 40px; height: 40px; 
+      background: var(--brand-indigo); 
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--brand-gold);
+      font-weight: 800; font-size: 20px;
+    }
+    .logo-text { font-size: 22px; font-weight: 700; color: var(--brand-indigo); letter-spacing: -0.5px; }
+
+    .btn { 
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 12px 24px; border-radius: var(--radius-sm);
+      font-weight: 600; font-size: 15px; cursor: pointer;
+      transition: var(--transition); text-decoration: none; gap: 8px;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--brand-indigo); color: var(--white); }
+    .btn-primary:hover { background: #0F1A25; transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    
+    .btn-outline { border: 1.5px solid var(--brand-gold); color: var(--brand-indigo); background: transparent; }
+    .btn-outline:hover { background: var(--brand-gold); color: var(--white); }
+
+    .btn-ghost { color: var(--brand-indigo); font-weight: 500; }
+
+    .hero { padding: 80px 0; text-align: center; position: relative; }
+    .hero-badge {
+      display: inline-block; padding: 6px 16px; background: rgba(197, 160, 89, 0.1);
+      color: var(--brand-gold); border-radius: 20px; font-size: 13px; font-weight: 700;
+      margin-bottom: 24px; border: 1px solid rgba(197, 160, 89, 0.2);
+    }
+    .hero h1 { font-size: 52px; margin: 0 0 20px; color: var(--brand-indigo); line-height: 1.2; }
+    .hero p { font-size: 20px; color: var(--text-muted); max-width: 720px; margin: 0 auto 40px; }
+
+    .section-header { text-align: center; margin-bottom: 48px; }
+    .section-header h2 { font-size: 32px; color: var(--brand-indigo); margin-bottom: 8px; }
+    .section-header p { color: var(--text-muted); font-size: 16px; }
+
+    .plans-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 60px; }
+    .addons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 100px; }
+
+    .card { 
+      background: var(--white); border-radius: var(--radius-lg);
+      border: 1px solid var(--line); padding: 40px;
+      display: flex; flex-direction: column; transition: var(--transition);
+    }
+    .card:hover { border-color: var(--brand-gold-light); box-shadow: var(--shadow-md); }
+
+    .featured { 
+      border: 2px solid var(--brand-gold); 
+      transform: scale(1.02);
+      box-shadow: 0 20px 40px rgba(197, 160, 89, 0.1);
+    }
+
+    .price-amt { font-size: 40px; font-weight: 800; color: var(--brand-indigo); margin: 20px 0; }
+    .price-amt small { font-size: 14px; font-weight: 400; color: var(--text-muted); }
+
+    .feature-list { list-style: none; padding: 0; margin: 0 0 32px; flex-grow: 1; }
+    .feature-list li { 
+      padding: 10px 0; border-bottom: 1px dotted #EEE; font-size: 14px;
+      display: flex; align-items: center; gap: 10px;
+    }
+    .check-icon { color: var(--brand-gold); flex-shrink: 0; }
+
+    .calculator { 
+      background: var(--brand-indigo); color: var(--white);
+      border-radius: var(--radius-lg); padding: 60px; margin: 80px 0;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center;
+    }
+    .calc-input label { display: block; margin-bottom: 12px; font-size: 14px; color: var(--brand-gold-light); }
+    .calc-input input { 
+      width: 100%; padding: 16px; border-radius: var(--radius-sm); 
+      border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05);
+      color: white; font-size: 24px; font-weight: 700;
+    }
+    .calc-results { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 60px; }
+    [dir="rtl"] .calc-results { border-left: none; border-right: 1px solid rgba(255,255,255,0.1); padding-right: 60px; }
+    
+    .calc-row { display: flex; justify-content: space-between; margin-bottom: 16px; font-size: 16px; }
+    .calc-total { margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 28px; font-weight: 800; color: var(--brand-gold); }
+
+    .cta-footer { 
+      background: var(--brand-gold); border-radius: var(--radius-lg); padding: 80px 40px;
+      text-align: center; color: var(--white); margin-bottom: 80px;
+    }
+
+    footer { padding-bottom: 60px; color: var(--text-muted); font-size: 14px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid rgba(197, 160, 89, 0.1); padding-top: 30px; }
+
+    @media (max-width: 900px) {
+      .plans-grid, .addons-grid, .calculator { grid-template-columns: 1fr; gap: 32px; }
+      .calc-results { border: none; padding: 0; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+      .featured { transform: none; }
+    }
+  </style>
+</head>
+<body id="page">
+
+  <div class="container">
+    <header>
+      <a href="#" class="logo-wrap">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">Nayeb | نايب</div>
+      </a>
+      <div style="display:flex; gap:16px; align-items:center;">
+        <button class="btn btn-ghost" onclick="toggleLanguage()" id="langBtn">English</button>
+        <a href="#whatsapp" class="btn btn-primary" data-t="navStart">ابدأ الآن</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-badge" data-t="badge">بكل فخر، صناعة سعودية 🇸🇦</div>
+        <h1 data-t="heroH1">ضيوفك يستحقون دعوة تليق بمقامهم</h1>
+        <p data-t="heroP">نايب ينوب عنك في تنظيم وإرسال دعوات مناسباتك الخاصة عبر الواتساب بكل فخامة ودقة، مع نظام تتبع حضور ذكي يبيض وجهك.</p>
+        <div style="display:flex; justify-content:center; gap:16px;">
+          <a href="#pricing" class="btn btn-primary" style="padding:16px 40px" data-t="heroBtn1">عرض الباقات</a>
+          <a href="#whatsapp" class="btn btn-outline" style="padding:16px 40px" data-t="heroBtn2">تواصل مباشر</a>
+        </div>
+      </section>
+
+      <section id="pricing">
+        <div class="section-header">
+          <h2 data-t="pTitle">باقاتنا الأساسية</h2>
+          <p data-t="pSub">اختر الخدمة التي تناسب احتياجك في الإرسال</p>
+        </div>
+        
+        <div class="plans-grid">
+          <div class="card">
+            <b style="color:var(--brand-indigo)" data-t="b1N">الباقة الأساسية</b>
+            <span style="font-size:14px; color:var(--text-muted)" data-t="b1S">نجهز المحتوى، والإرسال عليك</span>
+            <div class="price-amt">2.40 <small data-t="b1U">ر.س / ضيف</small></div>
+            <ul class="feature-list">
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l1">بطاقة مخصصة باسم كل ضيف</span></li>
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l2">باركود فريد للدخول</span></li>
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l3">تتبع ردود المعازيم</span></li>
+            </ul>
+            <a href="#whatsapp" class="btn btn-outline" data-t="pBtn">اختيار الباقة</a>
+          </div>
+
+          <div class="card featured">
+            <b style="color:var(--brand-indigo)" data-t="b2N">باقة "نايب برو"</b>
+            <span style="font-size:14px; color:var(--text-muted)" data-t="b2S">نحن نتولى كل شيء بالنيابة عنك</span>
+            <div class="price-amt">1,200 <small data-t="b2U">ر.س / مناسبة</small></div>
+            <ul class="feature-list">
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l4">إرسال جماعي آلي لكل القائمة</span></li>
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l5">تحديث فوري لقائمة الحضور</span></li>
+              <li><svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> <span data-t="l6">تقرير استلام نهائي مفصل</span></li>
+            </ul>
+            <a href="#whatsapp" class="btn btn-primary" data-t="pBtn">ابدأ مع برو</a>
+          </div>
+        </div>
+
+        <div class="section-header">
+          <h2 data-t="aTitle">إضافات خاصة</h2>
+          <p data-t="aSub">لمسات تزيد من فخامة وتنظيم مناسبتك</p>
+        </div>
+
+        <div class="addons-grid">
+          <div class="card">
+            <b data-t="a1N">تصميم هوية مخصصة</b>
+            <div class="price-amt">200 <small data-t="curr">ر.س</small></div>
+            <p style="font-size:14px; color:var(--text-muted); flex-grow:1" data-t="a1D">تصميم قالب حصري يعكس هوية مناسبتك الخاصة (مرة واحدة).</p>
+            <a href="#whatsapp" class="btn btn-outline" style="margin-top:20px" data-t="add">أضف للطلب</a>
+          </div>
+
+          <div class="card">
+            <b data-t="a2N">البطاقات المطبوعة</b>
+            <div class="price-amt">4 <small data-t="a2U">ر.س / بطاقة</small></div>
+            <p style="font-size:14px; color:var(--text-muted); flex-grow:1" data-t="a2D">طباعة فاخرة للكروت الورقية شاملة التوصيل لموقع المضيف.</p>
+            <a href="#whatsapp" class="btn btn-outline" style="margin-top:20px" data-t="add">أضف للطلب</a>
+          </div>
+
+          <div class="card">
+            <b data-t="a3N">إدارة الاستقبال ميدانياً</b>
+            <div class="price-amt">1,200 <small data-t="curr">ر.س</small></div>
+            <p style="font-size:14px; color:var(--text-muted); flex-grow:1" data-t="a3D">فريق محترف لإدارة دخول الضيوف (لأول 300 ضيف، و 600 ر.س لكل 150 ضيف إضافي).</p>
+            <a href="#whatsapp" class="btn btn-outline" style="margin-top:20px" data-t="add">أضف للطلب</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="calculator">
+        <div class="calc-input">
+          <h2 style="font-size: 28px; margin-bottom: 24px;" data-t="cTitle">حاسبة التكلفة الفورية</h2>
+          <label data-t="cLabel">أدخل عدد الضيوف المتوقع (الحد الأدنى 300)</label>
+          <input type="number" id="guestCount" value="300" min="300" oninput="updatePricing()">
+          <p style="font-size:13px; margin-top:16px; opacity:0.7;" data-t="cNote">* لاحظ: كلما زاد عدد الضيوف، قلت تكلفة الشخص الواحد في الباقة الأساسية.</p>
+        </div>
+        <div class="calc-results">
+          <div class="calc-row">
+            <span data-t="res1">سعر الضيف (أساسي):</span>
+            <span id="rateVal">2.40 ر.س</span>
+          </div>
+          <div class="calc-row">
+            <span data-t="res2">نسبة الخصم المطبقة:</span>
+            <span id="discountVal">0%</span>
+          </div>
+          <div class="calc-total">
+            <span data-t="resTotal">الإجمالي (الباقة الأساسية):</span>
+            <div id="totalVal">720.00 ر.س</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="whatsapp" class="cta-footer">
+        <h2 data-t="ctaH">جاهز لإبهار ضيوفك؟</h2>
+        <p data-t="ctaP">تواصل معنا الآن عبر الواتساب لتجهيز قائمة معازيمك واختيار القالب المناسب لمناسبتك.</p>
+        <a href="https://wa.me/966500000000" class="btn" style="background:white; color:var(--brand-indigo); font-size:18px; padding:18px 48px;">
+           تواصل معنا الآن
+        </a>
+      </section>
+
+      <footer>
+        <div data-t="copy">© ٢٠٢٤ نايب — الرقي في تنظيم الضيافة السعودية. جميع الحقوق محفوظة.</div>
+        <div style="display:flex; gap:20px;">
+          <a href="#" style="color:inherit; text-decoration:none;">Instagram</a>
+          <a href="#" style="color:inherit; text-decoration:none;">X.com</a>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    const i18n = {
+      ar: {
+        navStart: "ابدأ الآن",
+        badge: "بكل فخر، صناعة سعودية 🇸🇦",
+        heroH1: "ضيوفك يستحقون دعوة تليق بمقامهم",
+        heroP: "نايب ينوب عنك في تنظيم وإرسال دعوات مناسباتك الخاصة عبر الواتساب بكل فخامة ودقة، مع نظام تتبع حضور ذكي يبيض وجهك.",
+        heroBtn1: "عرض الباقات",
+        heroBtn2: "تواصل مباشر",
+        pTitle: "باقاتنا الأساسية",
+        pSub: "اختر الخدمة التي تناسب احتياجك في الإرسال",
+        b1N: "الباقة الأساسية",
+        b1S: "نجهز المحتوى، والإرسال عليك",
+        b1U: "ر.س / ضيف",
+        l1: "بطاقة دعوة باسم كل ضيف",
+        l2: "باركود فريد للدخول",
+        l3: "تتبع ردود المعازيم",
+        pBtn: "اختيار الباقة",
+        b2N: "باقة نايب برو",
+        b2S: "نحن نتولى كل شيء بالنيابة عنك",
+        b2U: "ر.س / مناسبة",
+        l4: "إرسال جماعي آلي لكل القائمة",
+        l5: "تحديث فوري لقائمة الحضور",
+        l6: "تقرير استلام نهائي مفصل",
+        aTitle: "إضافات خاصة",
+        aSub: "لمسات تزيد من فخامة وتنظيم مناسبتك",
+        a1N: "تصميم هوية مخصصة",
+        a1D: "تصميم قالب حصري يعكس هوية مناسبتك الخاصة (مرة واحدة).",
+        a2N: "البطاقات المطبوعة",
+        a2D: "طباعة فاخرة للكروت الورقية شاملة التوصيل لموقع المضيف.",
+        a2U: "ر.س / بطاقة",
+        a3N: "إدارة الاستقبال ميدانياً",
+        a3D: "فريق محترف لإدارة دخول الضيوف (لأول 300 ضيف، و 600 ر.س لكل 150 ضيف إضافي).",
+        add: "أضف للطلب",
+        cTitle: "حاسبة التكلفة الفورية",
+        cLabel: "أدخل عدد الضيوف المتوقع (الحد الأدنى 300)",
+        cNote: "* لاحظ: كلما زاد عدد الضيوف، قلت تكلفة الشخص الواحد في الباقة الأساسية.",
+        res1: "سعر الضيف (أساسي):",
+        res2: "نسبة الخصم المطبقة:",
+        resTotal: "الإجمالي (الباقة الأساسية):",
+        ctaH: "جاهز لإبهار ضيوفك؟",
+        ctaP: "تواصل معنا الآن عبر الواتساب لتجهيز قائمة معازيمك واختيار القالب المناسب لمناسبتك.",
+        copy: "© ٢٠٢٤ نايب — الرقي في تنظيم الضيافة السعودية. جميع الحقوق محفوظة.",
+        langBtn: "English",
+        curr: "ر.س"
+      },
+      en: {
+        navStart: "Get Started",
+        badge: "Proudly Made in Saudi Arabia 🇸🇦",
+        heroH1: "Your Guests Deserve an Invitation that Matches Their Status",
+        heroP: "Nayeb manages the luxury distribution and RSVP tracking of your private event invitations via WhatsApp with absolute precision.",
+        heroBtn1: "View Plans",
+        heroBtn2: "Live Chat",
+        pTitle: "Core Plans",
+        pSub: "Choose the service level for message distribution",
+        b1N: "Basic Plan",
+        b1S: "We prepare, you send",
+        b1U: "SAR / guest",
+        l1: "Invitation card per guest",
+        l2: "Unique barcode per card",
+        l3: "RSVP tracking support",
+        pBtn: "Choose Plan",
+        b2N: "Nayeb Pro",
+        b2S: "We handle everything for you",
+        b2U: "SAR / event",
+        l4: "Automated bulk sending",
+        l5: "Real-time attendance list",
+        l6: "Final detailed report",
+        aTitle: "Premium Add-ons",
+        aSub: "Special touches for a flawless event",
+        a1N: "Custom Identity Design",
+        a1D: "Exclusive template design reflecting your event's identity (One-time).",
+        a2N: "Physical Printed Cards",
+        a2D: "Premium printed cards delivered to your location.",
+        a2U: "SAR / card",
+        a3N: "On-site Reception Staff",
+        a3D: "Professional staff for guest check-in (Base 1,200 for 300, +600 per 150 extra guests).",
+        add: "Add to Order",
+        cTitle: "Instant Cost Calculator",
+        cLabel: "Enter expected guest count (Min 300)",
+        cNote: "* Note: As guest count increases, the price per guest for the Basic Plan decreases.",
+        res1: "Price per guest (Basic):",
+        res2: "Applied Discount:",
+        resTotal: "Total (Basic Plan):",
+        ctaH: "Ready to Impress Your Guests?",
+        ctaP: "Connect with us on WhatsApp to set up your guest list and choose the perfect template.",
+        copy: "© 2024 Nayeb — Luxury Saudi Hospitality Management. All rights reserved.",
+        langBtn: "العربية",
+        curr: "SAR"
+      }
+    };
+
+    let currentLang = 'ar';
+
+    function toggleLanguage() {
+      currentLang = currentLang === 'ar' ? 'en' : 'ar';
+      document.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      document.documentElement.lang = currentLang;
+      
+      const elements = document.querySelectorAll('[data-t]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-t');
+        el.textContent = i18n[currentLang][key];
+      });
+
+      document.getElementById('langBtn').textContent = i18n[currentLang].langBtn;
+      updatePricing();
+    }
+
+    function updatePricing() {
+      const input = document.getElementById("guestCount");
+      let guests = parseInt(input.value || "300");
+      if (guests < 300) guests = 300;
+
+      const baseRate = 2.40;
+      const steps = Math.floor((guests - 300) / 100);
+      const discountFactor = Math.pow(0.9, steps);
+      const currentRate = baseRate * discountFactor;
+      const total = guests * currentRate;
+
+      const discountPercent = Math.round((1 - discountFactor) * 100);
+      const curr = i18n[currentLang].curr;
+
+      document.getElementById("rateVal").textContent = `${currentRate.toFixed(2)} ${curr}`;
+      document.getElementById("discountVal").textContent = `${discountPercent}%`;
+      document.getElementById("totalVal").textContent = `${total.toLocaleString(undefined, {minimumFractionDigits: 2})} ${curr}`;
+    }
+
+    updatePricing();
+  </script>
+</body>
+</html>
